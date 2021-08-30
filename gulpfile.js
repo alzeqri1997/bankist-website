@@ -115,16 +115,14 @@ function bsWatchTask() {
 			interval: 1000,
 			usePolling: true
 		}, //Makes docker work
-		series(parallel(scssTask, jsTask , imgTask), cacheBustTask, browserSyncReload)
+		series(parallel(scssTask, jsTask ), cacheBustTask, browserSyncReload)
 	);
 }
-
-exports.default = imgTask();
 
 // Runs all of the above but also spins up a local Browsersync server
 // Run by typing in "gulp bs" on the command line
 exports.bs = series(
-	parallel(scssTask, jsTask, imgTask),
+	parallel(scssTask, jsTask),
 	cacheBustTask,
 	browserSyncServe,
 	bsWatchTask
