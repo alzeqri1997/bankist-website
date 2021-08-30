@@ -119,6 +119,8 @@ function bsWatchTask() {
 	);
 }
 
+exports.default = series(imgTask);
+
 // Runs all of the above but also spins up a local Browsersync server
 // Run by typing in "gulp bs" on the command line
 exports.bs = series(
