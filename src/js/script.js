@@ -75,18 +75,31 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 // Menu fade animation
+<<<<<<< HEAD
+=======
+
+>>>>>>> 192128f171ff1cf0ddc916702985caa6155210c5
 const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const sibling = link.closest('.nav').querySelectorAll('.nav__link');
     const logo = link.closest('.nav').querySelector('img');
 
+<<<<<<< HEAD
+=======
+    console.log(sibling);
+
+>>>>>>> 192128f171ff1cf0ddc916702985caa6155210c5
     sibling.forEach((el) => {
       if (el !== link) el.style.opacity = this;
     });
     logo.style.opacity = this;
   }
 };
+<<<<<<< HEAD
 // passing "argument" into handler
+=======
+
+>>>>>>> 192128f171ff1cf0ddc916702985caa6155210c5
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
