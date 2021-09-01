@@ -110,3 +110,19 @@ const headerObserver = new IntersectionObserver(stickNav, {
 });
 
 headerObserver.observe(header);
+
+// Slide Show using Swiper.js
+
+var swiper = new Swiper('.slider', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.slider__btn--right',
+    prevEl: '.slider__btn--left',
+  },
+});
