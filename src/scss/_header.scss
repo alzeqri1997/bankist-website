@@ -1,9 +1,15 @@
+@use "breakpoints" as *;
+
 .header {
   padding: 0 3rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include breakpoint(large) {
+    margin-bottom: 11rem;
+  }
   .nav {
     display: flex;
     justify-content: space-between;
@@ -12,6 +18,48 @@
     width: 100%;
     padding: 0 6rem;
     z-index: 100;
+
+    @include breakpoint(medium) {
+      padding: 3rem 6rem;
+    }
+
+    &__button {
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+
+      width: 3rem;
+      height: 2px;
+      background-color: #333;
+      display: none;
+      opacity: 0;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        opacity: 1;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        width: 3rem;
+        height: 2px;
+        top: -0.8rem;
+        background-color: #333;
+        display: inline-block;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        width: 3rem;
+        height: 2px;
+        top: 0.8rem;
+        background-color: #333;
+        display: inline-block;
+      }
+    }
 
     &__logo {
       height: 4.5rem;
@@ -22,10 +70,18 @@
       display: flex;
       align-items: center;
       list-style: none;
+      @include breakpoint(medium) {
+        display: none;
+        opacity: 0;
+      }
     }
 
     &__item {
       margin-left: 4rem;
+
+      @include breakpoint(large) {
+        margin-left: 2rem;
+      }
     }
 
     &__link {
@@ -66,6 +122,10 @@
     align-items: center;
     height: 100%;
 
+    @include breakpoint(large) {
+      margin-top: 6rem;
+    }
+
     &--content {
       flex: 1 1 45rem;
     }
@@ -75,6 +135,13 @@
 
       .img {
         width: 100%;
+
+        @include breakpoint(large) {
+          width: 75%;
+        }
+        @include breakpoint(small) {
+          width: 100%;
+        }
       }
     }
   }
