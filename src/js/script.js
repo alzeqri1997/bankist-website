@@ -12,6 +12,18 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
+// toggle hamburger menu
+
+const navBtn = document.querySelector('.nav__button');
+
+navBtn.addEventListener('click', function (e) {
+  const child = document.querySelector('.nav__button--line');
+
+  child.classList.add('nav__button--line--active');
+
+  // child.classList.add('.nav__button--line--active');
+});
+
 // View Model Window
 
 const openModal = function (e) {
