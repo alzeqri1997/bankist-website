@@ -33,6 +33,7 @@
         background-color: #333;
         display: none;
         opacity: 0;
+        transition: all 0.1s;
 
         @include breakpoint(medium) {
           display: inline-block;
@@ -86,17 +87,35 @@
       display: flex;
       align-items: center;
       list-style: none;
+      transition: all 0.3s;
       @include breakpoint(medium) {
-        display: none;
-        opacity: 0;
+        position: fixed;
+        flex-direction: column;
+        right: 0;
+        top: -32rem;
+        width: 100%;
+        background-color: #eee;
       }
     }
 
     &__item {
       margin-left: 4rem;
+      font-size: 2rem;
 
       @include breakpoint(large) {
         margin-left: 2rem;
+      }
+
+      @include breakpoint(medium) {
+        margin: 1rem;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        &:last-child {
+          border-bottom: none;
+          width: unset;
+        }
       }
     }
 
@@ -170,4 +189,8 @@
   @include breakpoint(small) {
     justify-content: space-around !important;
   }
+}
+
+.active {
+  top: 9rem !important;
 }
