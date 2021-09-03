@@ -15,13 +15,17 @@ const tabsContent = document.querySelectorAll('.operations__content');
 // toggle hamburger menu
 
 const navBtn = document.querySelector('.nav__button');
+const child = document.querySelector('.nav__button--line');
+const navLinks = document.querySelector('.nav__links');
 
 navBtn.addEventListener('click', function (e) {
-  const child = document.querySelector('.nav__button--line');
+  child.classList.toggle('nav__button--line--active');
+  navLinks.classList.toggle('active');
+});
 
-  child.classList.add('nav__button--line--active');
-
-  // child.classList.add('.nav__button--line--active');
+window.addEventListener('scroll', function () {
+  child.classList.remove('nav__button--line--active');
+  navLinks.classList.remove('active');
 });
 
 // View Model Window
