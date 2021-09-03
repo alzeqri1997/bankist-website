@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .section__title--testimonials {
   margin-bottom: 4rem;
 }
@@ -6,8 +8,12 @@
   width: 65%;
   position: relative;
 
+  @include breakpoint(medium) {
+    width: 100%;
+  }
+
   &::before {
-    content: "\201C";
+    content: '\201C';
     position: absolute;
     top: -5.7rem;
     left: -6.8rem;
@@ -16,6 +22,10 @@
     font-family: inherit;
     color: var(--color-primary);
     z-index: -1;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
   }
   &__header {
     font-size: 2.25rem;
