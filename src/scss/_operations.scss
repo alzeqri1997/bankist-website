@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 .operations {
   max-width: 100rem;
   margin: 12rem auto 0 auto;
@@ -44,15 +46,28 @@
     font-size: 1.7rem;
     padding: 2.5rem 7rem 6.5rem 7rem;
 
+    @include breakpoint(medium) {
+      padding: 1.5rem 1rem 6.5rem;
+      text-align: center;
+    }
+
     &--active {
       display: grid;
       grid-template-columns: 7rem 1fr;
       column-gap: 3rem;
       row-gap: 0.5rem;
+
+      @include breakpoint(medium) {
+        grid-template-columns: 1fr;
+      }
     }
 
     p {
       grid-column: 2;
+
+      @include breakpoint(medium) {
+        grid-column: unset;
+      }
     }
   }
 
@@ -69,6 +84,10 @@
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
+
+    @include breakpoint(medium) {
+      margin: 0 auto;
+    }
 
     svg {
       height: 2.75rem;
